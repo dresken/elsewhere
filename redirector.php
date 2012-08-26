@@ -2,7 +2,7 @@
 $server=$_SERVER["SERVER_NAME"];
 $uri=$_SERVER["REDIRECT_URL"];
 
-$redirection='http://deakin.edu.au';
+$redirection='http://google.com';
 
 set_time_limit(0); 
 ignore_user_abort(true);    
@@ -29,5 +29,5 @@ if (session_id()) session_write_close();
 
 sleep(50);
 $message=date(DATE_RFC822);
-mail ( 'aaron@roots.id.au' , 'Test' , $message);
+echo $message;
 ?>
