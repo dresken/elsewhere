@@ -1,0 +1,24 @@
+
+#RewriteEngine on
+# Enforce hostname selection
+#RewriteCond %{SERVER_NAME} ^www.geelongacupuncturecentre.com.au$
+#RewriteRule ^.*$ http://geelongacupuncturecentre.com.au%{REQUEST_URI} [L,R=301]
+
+#RewriteCond %{HTTP_HOST} ^www\.(.+)
+#RewriteRule ^ %{REQUEST_SCHEME}://%3%{REQUEST_URI} [L,R=301]
+
+# workaround for css/script caching
+#RewriteRule ^(styles|js)/(.*)\.[0-9]{14}\.(.*)$ /$1/$2.$3 [L]
+
+# index should go back to root
+#RewriteRule ^(.*)/?index(\..*)?$ /$1 [L,R=301]
+
+# pipe any request for a file that does not exist through bootstrap
+#RewriteCond %{IS_SUBREQ} false
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^.*$ redirector.php [L]
+
+
+
+#RewriteCond %{REQUEST_URI} !^/styles/
+#RewriteCond %{REQUEST_URI} .php$ [OR]
