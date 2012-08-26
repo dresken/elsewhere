@@ -1,4 +1,12 @@
 <?php 
+/*** 
+ * This lookups the current URL from the database and returns a redirect of some
+ * form. The response is delivered to the client and connection closed. The 
+ * final part of the code updates the access results in the database. 
+ * 
+ * Response and quick close from http://www.php.net/manual/en/features.connection-handling.php
+ */
+
 $server=$_SERVER["SERVER_NAME"];
 $uri=$_SERVER["REDIRECT_URL"];
 
