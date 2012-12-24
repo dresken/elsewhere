@@ -1,0 +1,3 @@
+#rewrite any request to this directory through bootstrap (will give a more secure 404)
+RewriteEngine on
+RewriteRule ^.*$ /bootstrap.php 
