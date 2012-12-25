@@ -6,10 +6,8 @@ abstract class Skeleton Extends \Site\Bones {
     public function __construct($title='', $forceSSL=FALSE) {
         parent::__construct('elswh.re URL Shortener', $forceSSL);
         
-        //TODO: Make config not require a require
         $this->config = new \Moshpit\Config();
-        $config = $this->config;
-        require $_SERVER['DOCUMENT_ROOT'].'/_config/config.php';
+        $this->config->load($_SERVER['DOCUMENT_ROOT'].'/_config/config.php');
         
         $this->setTitle($title);
         $this->setURL('elswh.re');
