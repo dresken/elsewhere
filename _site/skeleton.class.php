@@ -1,16 +1,10 @@
 <?php
 abstract class Skeleton Extends \Site\Bones {
-    
-    private $config;
-    
-    public function __construct($title='', $forceSSL=FALSE) {
-        parent::__construct('elswh.re URL Shortener', $forceSSL);
-        
-        $this->config = new \Moshpit\Config();
-        $this->config->load($_SERVER['DOCUMENT_ROOT'].'/_config/config.php');
-        
+    public function __construct($title='', $forceSSL=NULL) {
+        parent::__construct('elswh.re', 'elsewheREdirect - URL Shortener & Redirect Manager', $forceSSL);
+               
         $this->setTitle($title);
-        $this->setURL('elswh.re');
+        
         $this->addHead('<!-- meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" -->');
         $this->addHead('<meta name="Author" content="Aaron Howell" />');
 
