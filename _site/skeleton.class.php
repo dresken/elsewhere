@@ -16,7 +16,7 @@ abstract class Skeleton Extends \Site\Bones {
 
         $this->addJavascript('/js/vendor/modernizr-2.6.2.min.js');
         
-        $this->addGoogleAnalytics($this->config->google_analytics, "");
+        $this->addGoogleAnalytics(\Moshpit\Config::Config()->google_analytics, "");
                 
         //$this->addJavascript('http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4ecdf2407eb6f35b');
         
@@ -140,7 +140,7 @@ abstract class Skeleton Extends \Site\Bones {
         <script src="js/main.js"></script>
 
         <script>
-            var _gaq=[['_setAccount','<?php echo $this->config->google_analytics; ?>'],['_trackPageview']];
+            var _gaq=[['_setAccount','<?php echo \Moshpit\Config::Config()->google_analytics; ?>'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
